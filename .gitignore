@@ -1,2 +1,10 @@
 /node_modules
 /servidor-api/node_modules
+
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
