@@ -3,11 +3,11 @@ import { Negociacao } from "./negociacao";
 export class Negociacoes {
     private negociacoes: Negociacao[] = [];
 
-    adicionaNegociacao(negociacao: Negociacao) {
+    public adicionaNegociacao(negociacao: Negociacao) {
         this.negociacoes.push(negociacao);
     }
 
-    listarNegociacoes(): readonly Negociacao[] {
+    public listarNegociacoes(): readonly Negociacao[] {
         return this.negociacoes;
     }
 }

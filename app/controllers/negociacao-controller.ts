@@ -18,7 +18,7 @@ export class NegociacaoController {
        this.negociacoesView.update(this.negociacoes);
     }
 
-    adiciona(): void {
+    public adiciona(): void {
         const negociacao = this.criarNegociacao();
         this.negociacoes.adicionaNegociacao(negociacao);
         this.negociacoesView.update(this.negociacoes);
@@ -26,7 +26,7 @@ export class NegociacaoController {
         this.limparFormulario();
     }
 
-    criarNegociacao(): Negociacao {
+    private criarNegociacao(): Negociacao {
         const expresao = /-/g;
         const data = new Date(this.inputData.value.replace(expresao, ','));
         const quantidade = parseInt(this.inputQuantidade.value);
@@ -38,7 +38,7 @@ export class NegociacaoController {
         );
     }
 
-    limparFormulario(): void {
+    public limparFormulario(): void {
         this.inputData.value = '';
         this.inputQuantidade.value = '';
         this.inputValor.value = '';

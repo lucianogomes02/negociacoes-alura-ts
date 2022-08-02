@@ -7,7 +7,7 @@ export abstract class View<Tipo> {
 
     protected abstract template(modelo: Tipo): string;
 
-    update(modelo: Tipo): void {
+    public update(modelo: Tipo): void {
         const template = this.template(modelo);
         this.elemento.innerHTML = template;
     }
