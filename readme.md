@@ -11,3 +11,14 @@ npm install
 ```
 npm run start
 ```
+
+### Run local server-api
+```
+cd servidor-api
+```
+```
+npm install
+```
+```
+npm start
+```
