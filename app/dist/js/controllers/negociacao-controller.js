@@ -31,6 +31,21 @@ export class NegociacaoController {
         this.mensagemView.update('Negociação adicionada com sucesso!');
         this.limparFormulario();
     }
+    importarDados() {
+        fetch('http://localhost:8080/dados')
+            .then(resposta => resposta.json())
+            .then((dados) => {
+            return dados.map(dado => {
+                return new Negociacao(new Date(), dado.vezes, dado.montante);
+            });
+        })
+            .then(negociacoes => {
+            for (let negociacao of negociacoes) {
+                this.negociacoes.adicionaNegociacao(negociacao);
+            }
+            this.negociacoesView.update(this.negociacoes);
+        });
+    }
     ehDiaUtil(data) {
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO;
     }
