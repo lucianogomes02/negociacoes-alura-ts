@@ -4,6 +4,7 @@ import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
+import { NegociacoesDoDia } from "../interfaces/INegociacaoDoDia.js";
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
@@ -40,7 +41,7 @@ export class NegociacaoController {
     public importarDados(): void {
         fetch('http://localhost:8080/dados')
            .then(resposta => resposta.json())
-           .then((dados: any[]) => {
+           .then((dados: NegociacoesDoDia[]) => {
                 return dados.map(dado => {
                     return new Negociacao(
                         new Date(),
