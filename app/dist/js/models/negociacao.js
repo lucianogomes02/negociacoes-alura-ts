@@ -18,4 +18,9 @@ export class Negociacao {
         const valorProcessado = parseInt(valor);
         return new Negociacao(dataFormatada, quantidadeProcessada, valorProcessado);
     }
+    ehIgual(negociacao) {
+        return this.data.getDate() === negociacao.data.getDate()
+            && this.data.getMonth() === negociacao.data.getMonth()
+            && this.data.getFullYear() === negociacao.data.getFullYear();
+    }
 }
